@@ -70,14 +70,14 @@ method1();
 function method2() {
   var trueValue = window.value;
   var APIkey = "a24aaf5645632c28353fcb5a0faaf038";
-  var geoPos = "http://api.openweathermap.org/geo/1.0/direct?q=" + trueValue + "&limit=5&appid=" + APIkey;
+  var geoPos = "https://api.openweathermap.org/geo/1.0/direct?q=" + trueValue + "&limit=5&appid=" + APIkey;
   $.ajax({
         url: geoPos,
         method: "GET"
       }).then(function (geol) {
         var geoLat = geol[0].lat;
         var geoLon = geol[0].lon;
-        window.geoURL = "http://api.openweathermap.org/data/2.5/forecast?lat=" + geoLat + "&lon=" + geoLon + "&appid=" + APIkey;
+        window.geoURL = "https://api.openweathermap.org/data/2.5/forecast?lat=" + geoLat + "&lon=" + geoLon + "&appid=" + APIkey;
         console.log(geoURL);
         $(document).trigger('method2_complete');
       });
